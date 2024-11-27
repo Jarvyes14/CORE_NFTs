@@ -24,7 +24,7 @@ BASE_DIR = Path(__file__).resolve().parent.parent
 SECRET_KEY = config('SECRET_KEY')
 
 # SECURITY WARNING: don't run with debug turned on in production!
-DEBUG = config('DEBUG')
+DEBUG = False
 
 ALLOWED_HOSTS = [
 # Aqui debe de ir el nombre del dominio entre comillas   
@@ -77,7 +77,7 @@ WSGI_APPLICATION = 'Core_NFTs.wsgi.application'
 DATABASES = {
     'default': {
         'ENGINE': 'django.db.backends.sqlite3',
-        'NAME': config('DATABASE_NAME'),
+        'NAME': 'db.sqlite3',
     }
 }
 
