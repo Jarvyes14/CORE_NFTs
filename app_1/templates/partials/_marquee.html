@@ -1,0 +1,15 @@
+{% load static %}
+<link rel="stylesheet" href={% static '_marquee.css' %}>
+<div class="marquee">
+    <div class="marquee-content">
+        {% for palabra in palabras %}
+            <span>{{ palabra }}</span>
+        {% endfor %}
+        {% for palabra in palabras %}
+            <span>{{ palabra }}</span>
+        {% endfor %}
+        {% for palabra in palabras %}
+            <span>{{ palabra }}</span>
+        {% endfor %}
+    </div>
+</div>

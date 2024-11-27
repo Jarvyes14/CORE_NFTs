@@ -1,0 +1,202 @@
+@import url('https://fonts.googleapis.com/css2?family=Space+Mono:ital,wght@0,400;0,700;1,400;1,700&display=swap');
+
+body {
+    background-color: #0D0220;
+    overflow-x: hidden;
+    font-family: "Space Mono", monospace;
+}
+
+
+.main{
+    height: 60vmax;
+    width: 100vw;
+    position: relative;
+    top: 0%;
+    overflow-x: hidden;
+    overflow-y: hidden;
+
+}
+
+.light-box{
+    position: relative;
+    left: 50%;
+    top: -0vmax;
+    width: 60%;
+    height: 40%;
+    transform: translate(-50%) rotate(30deg) scale(200%);
+    background-color: rgba(54, 110, 157, 0.4);
+    box-shadow: 0px 45vmax 100px -6vmax rgba(254, 108, 63, 0.3);
+    filter: blur(50px);
+    transform-origin: 50% 150%;
+
+    animation: rotate 5s linear infinite;
+}
+
+@keyframes rotate {
+    from {
+        transform: translate(-50%) rotate(0deg) scale(300%); /* Empieza sin rotación */
+    }
+    to {
+        transform: translate(-50%) rotate(360deg) scale(300%); /* Gira completamente */
+    }
+}
+
+.contenedor{
+    display: none;
+    grid-template-columns: 1fr 1fr; /* Dos columnas de tamaño igual */
+    grid-template-rows: 1fr 1fr;    /* Dos filas de tamaño igual */
+    gap: 0%;
+    position: absolute;
+    width: 75%;
+    height: fit-content;
+    left: 5%;
+    top: 25%;
+    transform: translate(0%, -50%);
+    margin-top: 15%;
+    border: red;
+    border-style: solid;
+}
+
+.text_1{
+    color: aliceblue;
+    text-align: left;
+    font-size: 5vw;
+    letter-spacing: -0.06em;
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #ffffff; /* Bordes blancos para dividir las celdas */
+    box-sizing: border-box;  
+}
+
+.text_2{
+    width: 100%;
+    color: aliceblue;
+    text-align: left;
+    font-size: 6vw; 
+
+    background-clip:0;
+    background: linear-gradient(to right, #ee9b00, #8e5202, #ee9b00, #8e5202, #ee9b00);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 80%;
+    animation: rainbow 3s linear infinite;
+
+    border: 2px solid #ffffff; /* Bordes blancos para dividir las celdas */
+    box-sizing: border-box;  
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 400% 400%;
+    }
+}
+
+.text_3{
+    color: aliceblue;
+    text-align: left;
+    font-size: 5vw;
+    letter-spacing: -0.06em;
+    width: fit-content;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border: 2px solid #ffffff; /* Bordes blancos para dividir las celdas */
+    box-sizing: border-box;
+}
+
+.text_4{
+    width: 100%;
+    color: aliceblue;
+    font-weight: 100;
+    text-align: left;
+    font-size: 5vw; 
+
+    background-clip:0;
+    background: linear-gradient(to right, #336B98, #FECC39, #336B98, #FECC39, #336B98);
+    -webkit-background-clip: text;
+    -webkit-text-fill-color: transparent;
+    background-size: 80%;
+    animation: rainbow 3s linear infinite;
+
+    border: 2px solid #ffffff; /* Bordes blancos para dividir las celdas */
+    box-sizing: border-box;  
+}
+
+@keyframes rainbow {
+    0% {
+        background-position: 0% 0%;
+    }
+    100% {
+        background-position: 400% 400%;
+    }
+}
+
+.box_1{
+    position:relative;
+    left: 15vw;
+    top: -15vh;
+    width: fit-content;
+    height: fit-content;
+    color: aliceblue;
+    border-radius: 25px;
+    padding: 1%;
+    filter: opacity(200%);
+    background: linear-gradient(45deg,rgba(255,255,255,0.07), rgba(255,255,255,0.02), rgba(255,255,255,0.04));
+}
+
+.num_1{
+    position: relative;
+    margin-top: 0%;
+}
+
+.box_2{
+    position:relative;
+    left: 20vw;
+    top: -5vh;
+    width: fit-content;
+    height: fit-content;
+    color: aliceblue;
+    border-radius: 25px;
+    padding: 1%;
+    filter: opacity(200%);
+    background: linear-gradient(45deg,rgba(255,255,255,0.07), rgba(255,255,255,0.02), rgba(255,255,255,0.04));
+}
+
+.num_2{
+    position: relative;
+    margin-top: 0%;
+}
+
+.seccion_2{
+    width: 100vw;
+    min-height: 100vh;
+    height: fit-content;
+    position: relative;
+    padding: 2%;
+    color: white;
+}
+
+.nft-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(fit-content, 1fr));
+    gap: 20px;
+    width: 100vw;
+    max-width: 1000px;
+}
+
+.nft-item{
+    padding: 2%;
+}
+
+.nft-titulo{
+    color: white;
+}

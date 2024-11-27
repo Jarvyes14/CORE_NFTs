@@ -1,0 +1,125 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href={% static 'catalogo.css' %}>
+    <title>Catálogo de NFTs</title>
+    <style>
+        .nft-item {
+            margin: 10px;
+            display: inline-block;
+            width: 200px;
+            height: 300px;
+            background-color: #f3f3f3;
+            text-align: center;
+            border-radius: 10px;
+        }
+        .nft-item img {
+            max-width: 100%;
+            max-height: 150px;
+        }
+    </style>
+</head>
+<body>
+    {% include "partials\_barra_superior.html" %}
+    <div class="main">
+        <div class="light-box"></div>
+        <div class="contenedor">
+            <h1 class="text_1">Descubre la </h1>
+            <h1 class="text_2">Blockchain</h1>
+            <h1 class="text_3">junto con</h1>
+            <h1 class="text_4">Django</h1>
+        </div>
+        <div class="box_1">
+            <h1 class="num_1">301M+</h1>
+            <p>Transactions On-Chain</p>
+        </div>
+        <div class="box_2">
+            <h1 class="num_2">5M</h1>
+            <p>Active Wallets</p>
+        </div>
+    </div>
+
+    <div class="seccion_2">
+        <h1 style="color: white;">Catálogo de NFTs</h1>
+        <div class="nft-grid">
+            {% if nfts %}
+                {% for nft in nfts %}
+                    <div class="nft-item" onmouseout="closeMintingModal()" onmouseover="openMintingModal('{{ nft.id }}')" style="background-color: rgba(102, 153, 204, 0.3);">
+                        <img src="{{ nft.image_url }}" alt="{{ nft.title }}" style="height: 1200px; width: 1200px;">
+                        <h3 class="nft-titulo">{{ nft.title }}</h3>
+                        <div id="minting-modal" style="display: none;">
+                            <input type="text" id="wallet-address" placeholder="Dirección de wallet" style="background-color:rgba(102, 153, 204, 0.3); border: none; padding: 3%; border-radius: 5px; color: white;">
+                            <button onclick="mintNFT()" style="margin-top: 5%;">Mint NFT</button>
+                            <div id="minting-status"></div>
+                        </div>
+                    </div>
+                {% endfor %}
+            {% else %}
+                <p class="No_hay">No hay NFTs disponibles para reclamar.</p>
+            {% endif %}
+        </div>
+    </div>
+    
+
+    <!-- Modal para ingresar la dirección de wallet y hacer el minting -->
+
+
+    <script>
+
+        function getCookie(name) {
+            const value = `; ${document.cookie}`;
+            const parts = value.split(`; ${name}=`);
+            if (parts.length === 2) return parts.pop().split(';').shift();
+        }
+        
+        let selectedNFTId = null;
+
+        function openMintingModal(nftId) {
+            selectedNFTId = nftId;
+            document.getElementById('minting-modal').style.display = 'block';
+        }
+
+        function closeMintingModal() {
+            document.getElementById('minting-modal').style.display = 'none';
+        }
+
+        async function mintNFT() {
+            const walletAddress = document.getElementById('wallet-address').value;
+            if (!walletAddress) {
+                alert('Por favor ingresa una dirección de wallet.');
+                return;
+            }
+
+            const csrftoken = getCookie('csrftoken'); // Obtén el token CSRF
+
+            const response = await fetch('/mint_nft/', {
+                method: 'POST',
+                headers: {
+                    'Content-Type': 'application/json',
+                    'X-CSRFToken': csrftoken // Incluye el token CSRF
+                },
+                body: JSON.stringify({
+                    wallet: walletAddress,
+                    nft_id: selectedNFTId
+                })
+            });
+
+            try {
+                const data = await response.json();
+                if (data.tx_hash) {
+                    document.getElementById('minting-status').innerHTML = `NFT reclamado exitosamente. Hash de transacción: ${data.tx_hash}`;
+                } else {
+                    document.getElementById('minting-status').innerHTML = `Error: ${data.error}`;
+                }
+            } catch (error) {
+                console.error('Error procesando la respuesta:', error);
+                document.getElementById('minting-status').innerHTML = 'Ocurrió un error inesperado.';
+            }
+        }
+    </script>
+
+</body>
+</html>

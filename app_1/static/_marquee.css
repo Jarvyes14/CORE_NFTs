@@ -1,0 +1,37 @@
+.marquee{
+    transform: rotate(-1deg);
+    width: 100vw;
+    overflow: hidden;
+    background-color: #333;
+    color: #fff;
+    position: relative;
+    padding-top: 0.5%;
+    padding-bottom: 0.5%;
+    margin-top: -2%;
+    margin-bottom: 2%;
+}
+
+/* Animación del texto */
+.marquee-content{
+    display: inline-block;
+    animation: scroll 5s linear infinite;
+    width: 200%;
+    border: red;
+    border-style:solid;
+    height: 20px;
+}
+
+.marquee-content span {
+    margin-right: 50px; /* Espacio entre palabras */
+    font-size: 20px;
+}
+
+/* Animación de desplazamiento */
+@keyframes scroll {
+    0% {
+        transform: translateX(-40%);
+    }
+    100% {
+        transform: translateX(-9%);
+    }
+}
