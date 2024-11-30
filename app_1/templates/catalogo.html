@@ -23,7 +23,7 @@
     </style>
 </head>
 <body>
-    {% include "partials/_barra_superior.html" %}
+    {% include "partials\_barra_superior.html" %}
     <div class="main">
         <div class="light-box"></div>
         <div class="contenedor">
@@ -34,14 +34,24 @@
         </div>
         <div class="box_1">
             <h1 class="num_1">301M+</h1>
-            <p>Transactions On-Chain</p>
+            <p style="font-size: 1vw;">Transactions On-Chain</p>
         </div>
         <div class="box_2">
             <h1 class="num_2">5M</h1>
-            <p>Active Wallets</p>
+            <p style="font-size: 1vw;">Active Wallets</p>
+        </div>
+        <img src="https://cryptologos.cc/logos/core-dao-core-logo.png" alt="" class="core">
+        <h1 class="django">Django</h1>
+        <div class="box_3">
+            <h1 class="num_3">2.2M</h1>
+            <p style="font-size: 1vw;">Twitter Followers</p>
+        </div>
+        <div class="box_4">
+            <h1 class="num_4">253k</h1>
+            <p style="font-size: 1vw;">Discord Members</p>
         </div>
     </div>
-
+    {% include "partials\_marquee.html" %}
     <div class="seccion_2">
         <h1 style="color: white;">Catálogo de NFTs</h1>
         <div class="nft-grid">
