@@ -7,10 +7,10 @@ from .models import NFT, ClaimedNFT
 from decouple import config
 
 # Configuración de Web3 y contrato
-web3 = Web3(Web3.HTTPProvider('https://rpc.test.btcs.network'))
+web3 = Web3(Web3.HTTPProvider('https://rpc.ankr.com/core'))
 ACCOUNT_ADDRESS = config("ACCOUNT_ADDRESS") # Dirección pública del minter
 PRIVATE_KEY = config("PRIVATE_KEY") # La clave privada del minter
-CONTRACT_ADDRESS = "0x3e418C0254d16713c42191d10381c3cB6661fbd7"  # Dirección del contrato
+CONTRACT_ADDRESS = "0x35561413F41DD356D7580E94dffd6e3d862d2CF5"  # Dirección del contrato
 CONTRACT_ABI = [
     {
       "inputs": [],
