@@ -156,6 +156,7 @@ body {
 .num_1{
     position: relative;
     margin-top: 0%;
+    font-size: 2vw; 
 }
 
 .box_2{
@@ -174,6 +175,71 @@ body {
 .num_2{
     position: relative;
     margin-top: 0%;
+    font-size: 2vw; 
+}
+
+.core{
+    position:absolute;
+    left: 50%;
+    top: 40%;
+    width: 20%;
+    transform: translate(-50%, -50%);
+    filter: opacity(20%);
+}
+
+.django{
+    position:absolute;
+    left: 50%;
+    top: 33%;
+    width: 20%;
+    color: aliceblue;
+    width: fit-content;
+    height: fit-content;
+    transform: translate(-50%, -50%);
+    font-size: 500%;
+}
+
+.box_3{
+    position:absolute;
+    left: 70vw;
+    top: 27vh;
+    width: fit-content;
+    height: fit-content;
+    color: aliceblue;
+    border-radius: 25px;
+    padding: 1%;
+    filter: opacity(200%);
+    background: linear-gradient(45deg,rgba(255,255,255,0.07), rgba(255,255,255,0.02), rgba(255,255,255,0.04));
+
+}
+
+.num_3{
+    position: relative;
+    margin-top: 0%;
+    font-size: 2vw; 
+    width: fit-content;
+    padding-left: 50%;
+}
+
+.box_4{
+    position:absolute;
+    left: 70vw;
+    top: 50vh;
+    width: fit-content;
+    height: fit-content;
+    color: aliceblue;
+    border-radius: 25px;
+    padding: 1%;
+    filter: opacity(200%);
+    background: linear-gradient(45deg,rgba(255,255,255,0.07), rgba(255,255,255,0.02), rgba(255,255,255,0.04));
+}
+
+.num_4{
+    position: relative;
+    margin-top: 0%;
+    font-size: 2vw; 
+    width: fit-content;
+    padding-left: 50%;
 }
 
 .seccion_2{
@@ -183,6 +249,7 @@ body {
     position: relative;
     padding: 2%;
     color: white;
+    background-color: #0D0220;
 }
 
 .nft-grid {
