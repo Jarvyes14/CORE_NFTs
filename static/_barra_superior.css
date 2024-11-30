@@ -2,49 +2,35 @@
     position: sticky;
     display: flex;
     width: 100%;
-    height: 15%;
     font-family: Arial;
     top: 0%;
     z-index: 3;
+    background-color: rgba(0, 0, 0, 0.5);
 }
 .image_logo{
     position: absolute;
     height: 6vmax;
-    margin-top: 1vmax;
-    margin-left: 85%;
+    margin-top: 2vmax;
+    margin-left: 0.5%;
     filter: brightness(1000%);
     padding-left: 3%;
 }
-
-/* From Uiverse.io by vinodjangid07 */ 
-/*.InputContainer {
-    width: 210px;
-    display: flex;
-    align-items: center;
-    justify-content: center;
-    border-radius: 10px;
-    cursor: pointer;
-    position: absolute;
-    top: 60%;
-    left: 7%;
-    transform: translate(0%, -50%);
-    border-radius: 53px;
-
-  }
-  
-  .input {
-    width: 200px;
-    height: 40px;
-    border: none;
-    outline: none;
-    caret-color: rgb(255, 81, 0);
-    background-color: rgb(255, 255, 255);
-    border-radius: 30px;
-    padding-left: 15px;
-    letter-spacing: 0.8px;
-    color: rgb(19, 19, 19);
-    font-size: 13.4px;
-    box-shadow: inset 1px 2px 5px #999999,
-     inset 7px 7px 5px#f4f4f4;
-  }
-*/  
+.network-button{
+  position: absolute;
+  margin-top: 3vmax;
+  margin-left: 85%;
+  border-radius: 25px;
+  background-color: #181A1B;
+  color: azure;
+  padding: 1%;
+  border: none;
+  display: flex;
+  width: 11%;
+  align-items: center;
+  margin-right: 2%;
+  padding-left: 1%;
+}
+.Icon_root{
+  position: relative;
+  margin-left: 12%;
+}
