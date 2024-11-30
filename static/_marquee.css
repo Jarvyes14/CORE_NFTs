@@ -2,7 +2,7 @@
     transform: rotate(-1deg);
     width: 100vw;
     overflow: hidden;
-    background-color: #333;
+    background-color: #181A1B;
     color: #fff;
     position: relative;
     padding-top: 0.5%;
@@ -14,11 +14,10 @@
 /* Animación del texto */
 .marquee-content{
     display: inline-block;
-    animation: scroll 5s linear infinite;
-    width: 200%;
-    border: red;
-    border-style:solid;
-    height: 20px;
+    width: 220%;
+    height: 30px;
+    margin-left: -100%;
+    animation: slide-in 30s linear infinite;
 }
 
 .marquee-content span {
@@ -26,12 +25,11 @@
     font-size: 20px;
 }
 
-/* Animación de desplazamiento */
-@keyframes scroll {
-    0% {
-        transform: translateX(-40%);
+@keyframes slide-in {
+    from {
+      margin-left: -100%;
     }
-    100% {
-        transform: translateX(-9%);
+    to {
+      margin-left: 0%;
     }
-}
+  }
